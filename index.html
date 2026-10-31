@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Production orale – Voyages et vacances</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f6f6f6;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+    line-height: 1.6;
+}
+
+.page {
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 0 14px 40px;
+}
+
+
+/* =====================================================
+   ÉLÉMENTS GÉNÉRAUX
+===================================================== */
+
+.titre-activite {
+    background: linear-gradient(135deg,#ff5b63 0%,#ff4a55 100%);
+    color: white;
+    padding: 20px 24px;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.carte {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    margin-bottom: 18px;
+}
+
+.sous-titre {
+    font-size: 20px;
+    font-weight: 700;
+    color: #d84049;
+    margin-bottom: 12px;
+}
+
+.encadre {
+    background: #fff2f3;
+    border-left: 5px solid #ff5257;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-top: 16px;
+}
+
+
+/* =====================================================
+   GRILLES
+===================================================== */
+
+.grille {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #dddddd;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-top: 18px;
+}
+
+.grille th {
+    background: #fff2f3;
+    color: #b93c44;
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 16px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.grille th:first-child {
+    width: 34%;
+}
+
+.grille td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eeeeee;
+    vertical-align: top;
+}
+
+.grille tr:last-child td {
+    border-bottom: none;
+}
+
+.grille td:first-child {
+    background: #fafafa;
+    font-weight: 700;
+}
+
+.cellule {
+    min-height: 42px;
+    padding: 7px 9px;
+    border-radius: 8px;
+    cursor: text;
+    outline: none;
+    white-space: pre-wrap;
+    transition: background .2s, box-shadow .2s;
+}
+
+.cellule:hover {
+    background: #fff7f7;
+}
+
+.cellule:focus {
+    background: #ffffff;
+    box-shadow: 0 0 0 2px rgba(255,82,87,0.25);
+}
+
+.cellule:empty::before {
+    content: attr(data-placeholder);
+    color: #aaaaaa;
+    pointer-events: none;
+}
+
+.indication {
+    display: block;
+    color: #888888;
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 3px;
+}
+
+
+/* ACTIVITÉS */
+
+.lignes-activites {
+    display: grid;
+    gap: 7px;
+}
+
+.activite-ligne {
+    min-height: 34px;
+    padding: 5px 8px;
+    border-bottom: 1px dashed #dddddd;
+    outline: none;
+}
+
+.activite-ligne:last-child {
+    border-bottom: none;
+}
+
+.activite-ligne:empty::before {
+    content: attr(data-placeholder);
+    color: #aaaaaa;
+}
+
+
+/* CONNECTEURS */
+
+.connecteurs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.connecteur {
+    background: #fff2f3;
+    border: 1px solid #ffccd0;
+    color: #b93c44;
+    border-radius: 20px;
+    padding: 7px 13px;
+    font-weight: 600;
+}
+
+
+/* MODÈLES FUTUR PROCHE */
+
+.modeles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.modele {
+    background: #fff2f3;
+    border-radius: 8px;
+    padding: 8px 11px;
+}
+
+
+/* =====================================================
+   BOUTONS
+===================================================== */
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+button {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-principal {
+    background: #ff5257;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 13px 25px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(255,82,87,0.25);
+}
+
+.btn-principal:hover {
+    background: #ef454c;
+}
+
+.btn-secondaire {
+    background: white;
+    color: #444444;
+    border: 1px solid #cccccc;
+    border-radius: 12px;
+    padding: 13px 25px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-secondaire:hover {
+    background: #f7f7f7;
+}
+
+.btn-global {
+    background: #333333;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 27px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-global:hover {
+    background: #222222;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px) {
+
+    .titre-activite {
+        font-size: 21px;
+    }
+
+    .grille th:first-child {
+        width: 42%;
+    }
+
+    .grille th,
+    .grille td {
+        padding: 11px;
+        font-size: 14px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+<!-- =====================================================
+     ACTIVITÉ 1
+===================================================== -->
+
+<div class="titre-activite">
+    Activité 1. Organiser un voyage
+</div>
+
+
+<div class="carte">
+
+    <p style="margin-top:0;">
+        En binômes, organisez
+        <strong>un voyage qui vous plairait à tous les deux</strong>.
+        Discutez et prenez une décision commune pour chacun des six éléments suivants.
+    </p>
+
+    <div class="encadre">
+        Notez vos décisions directement dans la grille.
+        Il n’est pas nécessaire de rédiger toute votre présentation.
+    </div>
+
+</div>
+
+
+<div class="carte">
+
+    <div class="sous-titre">
+        Notre projet de voyage
+    </div>
+
+
+    <table class="grille" id="grille-activite1">
+
+        <thead>
+            <tr>
+                <th>Décision</th>
+                <th>Notre choix</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>
+                    1. Destination
+                </td>
+
+                <td>
+                    <div
+                        class="cellule a1"
+                        data-label="Destination"
+                        contenteditable="true"
+                        data-placeholder="Ex. : Paris, Montréal, la Gaspésie...">
+                    </div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    2. Période
+                </td>
+
+                <td>
+                    <div
+                        class="cellule a1"
+                        data-label="Période"
+                        contenteditable="true"
+                        data-placeholder="Ex. : du 10 au 17 juillet">
+                    </div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    3. Moyen de transport
+                </td>
+
+                <td>
+                    <div
+                        class="cellule a1"
+                        data-label="Moyen de transport"
+                        contenteditable="true"
+                        data-placeholder="Ex. : avion, train, voiture...">
+                    </div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    4. Hébergement
+                </td>
+
+                <td>
+                    <div
+                        class="cellule a1"
+                        data-label="Hébergement"
+                        contenteditable="true"
+                        data-placeholder="Ex. : hôtel, appartement, auberge...">
+                    </div>
+                </td>
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    5. Trois activités
+                    <span class="indication">
+                        à faire sur place
+                    </span>
+                </td>
+
+                <td>
+
+                    <div class="lignes-activites">
+
+                        <div
+                            class="activite-ligne a1"
+                            data-label="Activité 1"
+                            contenteditable="true"
+                            data-placeholder="1.">
+                        </div>
+
+                        <div
+                            class="activite-ligne a1"
+                            data-label="Activité 2"
+                            contenteditable="true"
+                            data-placeholder="2.">
+                        </div>
+
+                        <div
+                            class="activite-ligne a1"
+                            data-label="Activité 3"
+                            contenteditable="true"
+                            data-placeholder="3.">
+                        </div>
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+
+            <tr>
+                <td>
+                    6. Budget approximatif
+                    <span class="indication">
+                        par personne
+                    </span>
+                </td>
+
+                <td>
+                    <div
+                        class="cellule a1"
+                        data-label="Budget approximatif par personne"
+                        contenteditable="true"
+                        data-placeholder="Ex. : 1 200 $">
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+    <div class="actions">
+
+        <button
+            class="btn-principal"
+            onclick="telechargerActivite1()">
+            Télécharger nos réponses
+        </button>
+
+        <button
+            class="btn-secondaire"
+            onclick="effacerActivite1()">
+            Effacer la grille
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- FUTUR PROCHE -->
+
+<div class="carte">
+
+    <div class="sous-titre">
+        Présentation à la classe
+    </div>
+
+    <p>
+        Présentez votre projet à la classe.
+        Utilisez le <strong>futur proche</strong> pour parler de vos projets.
+        Expliquez brièvement vos choix.
+    </p>
+
+    <div class="modeles">
+
+        <span class="modele">
+            Nous allons partir…
+        </span>
+
+        <span class="modele">
+            Nous allons prendre…
+        </span>
+
+        <span class="modele">
+            Nous allons loger…
+        </span>
+
+        <span class="modele">
+            Nous allons visiter…
+        </span>
+
+        <span class="modele">
+            Nous allons faire…
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     ACTIVITÉ 2
+===================================================== -->
+
+<div style="height:30px;"></div>
+
+
+<div class="titre-activite">
+    Activité 2. Mes meilleures ou mes pires vacances
+</div>
+
+
+<div class="carte">
+
+    <p style="margin-top:0;">
+        Pensez aux meilleures ou aux pires vacances que vous avez vécues.
+        Racontez brièvement les événements les plus importants et expliquez
+        pourquoi ces vacances ont été mémorables ou, au contraire, terribles.
+    </p>
+
+    <p>
+        Utilisez le <strong>passé composé</strong> pour raconter votre expérience.
+    </p>
+
+    <div class="encadre">
+        Utilisez la grille pour préparer votre récit.
+        Notez seulement les informations importantes.
+    </div>
+
+</div>
+
+
+<div class="carte">
+
+    <div class="sous-titre">
+        Préparer mon récit
+    </div>
+
+
+    <table class="grille" id="grille-activite2">
+
+        <thead>
+
+            <tr>
+                <th>Élément</th>
+                <th>Mes notes</th>
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+
+            <tr>
+
+                <td>
+                    Mes vacances
+                    <span class="indication">
+                        meilleures ou pires ?
+                    </span>
+                </td>
+
+                <td>
+                    <div
+                        class="cellule a2"
+                        data-label="Type de vacances"
+                        contenteditable="true"
+                        data-placeholder="Ex. : Mes meilleures vacances">
+                    </div>
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Où ?
+                </td>
+
+                <td>
+                    <div
+                        class="cellule a2"
+                        data-label="Lieu"
+                        contenteditable="true"
+                        data-placeholder="Ex. : Je suis allé(e) en Espagne.">
+                    </div>
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Avec qui ?
+                </td>
+
+                <td>
+                    <div
+                        class="cellule a2"
+                        data-label="Avec qui"
+                        contenteditable="true"
+                        data-placeholder="Ex. : Je suis parti(e) avec ma famille.">
+                    </div>
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    D’abord
+                </td>
+
+                <td>
+                    <div
+                        class="cellule a2"
+                        data-label="D’abord"
+                        contenteditable="true"
+                        data-placeholder="Que s’est-il passé au début ?">
+                    </div>
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Ensuite
+                </td>
+
+                <td>
+                    <div
+                        class="cellule a2"
+                        data-label="Ensuite"
+                        contenteditable="true"
+                        data-placeholder="Que s’est-il passé ensuite ?">
+                    </div>
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Puis
+                </td>
+
+                <td>
+                    <div
+                        class="cellule a2"
+                        data-label="Puis"
+                        contenteditable="true"
+                        data-placeholder="Quel autre événement s’est produit ?">
+                    </div>
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Après
+                </td>
+
+                <td>
+                    <div
+                        class="cellule a2"
+                        data-label="Après"
+                        contenteditable="true"
+                        data-placeholder="Que s’est-il passé après ?">
+                    </div>
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Finalement
+                </td>
+
+                <td>
+                    <div
+                        class="cellule a2"
+                        data-label="Finalement"
+                        contenteditable="true"
+                        data-placeholder="Comment les vacances se sont-elles terminées ?">
+                    </div>
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Pourquoi ?
+                    <span class="indication">
+                        mémorables ou terribles
+                    </span>
+                </td>
+
+                <td>
+                    <div
+                        class="cellule a2"
+                        data-label="Pourquoi ces vacances ont été mémorables ou terribles"
+                        contenteditable="true"
+                        data-placeholder="Expliquez brièvement votre opinion.">
+                    </div>
+                </td>
+
+            </tr>
+
+
+        </tbody>
+
+    </table>
+
+
+    <div class="actions">
+
+        <button
+            class="btn-principal"
+            onclick="telechargerActivite2()">
+            Télécharger mes réponses
+        </button>
+
+        <button
+            class="btn-secondaire"
+            onclick="effacerActivite2()">
+            Effacer la grille
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- CONNECTEURS -->
+
+<div class="carte">
+
+    <div class="sous-titre">
+        Pour organiser votre récit
+    </div>
+
+    <p>
+        Vous pouvez utiliser les expressions suivantes :
+    </p>
+
+    <div class="connecteurs">
+
+        <span class="connecteur">
+            D’abord
+        </span>
+
+        <span class="connecteur">
+            Ensuite
+        </span>
+
+        <span class="connecteur">
+            Puis
+        </span>
+
+        <span class="connecteur">
+            Après
+        </span>
+
+        <span class="connecteur">
+            Finalement
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TÉLÉCHARGEMENT GLOBAL
+===================================================== -->
+
+<div class="carte" style="text-align:center;">
+
+    <div class="sous-titre">
+        Partager votre travail
+    </div>
+
+    <p>
+        Vous pouvez aussi télécharger les réponses des deux activités
+        dans un seul fichier.
+    </p>
+
+    <div class="actions">
+
+        <button
+            class="btn-global"
+            onclick="telechargerTout()">
+            Télécharger les deux activités
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   RÉCUPÉRER LE TEXTE DES CELLULES
+===================================================== */
+
+function lireReponses(classe) {
+
+    const cellules =
+        document.querySelectorAll("." + classe);
+
+    let texte = "";
+
+    cellules.forEach(function(cellule) {
+
+        const label =
+            cellule.dataset.label || "";
+
+        const valeur =
+            cellule.innerText.trim() || "—";
+
+        texte +=
+            label +
+            " : " +
+            valeur +
+            "\n";
+
+    });
+
+    return texte;
+
+}
+
+
+/* =====================================================
+   CRÉER UN FICHIER À TÉLÉCHARGER
+===================================================== */
+
+function telechargerFichier(nomFichier, contenu) {
+
+    const blob =
+        new Blob(
+            [contenu],
+            {
+                type:
+                    "text/plain;charset=utf-8"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const lien =
+        document.createElement("a");
+
+
+    lien.href =
+        url;
+
+    lien.download =
+        nomFichier;
+
+
+    document.body.appendChild(lien);
+
+    lien.click();
+
+    document.body.removeChild(lien);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   ACTIVITÉ 1
+===================================================== */
+
+function telechargerActivite1() {
+
+    const contenu =
+        "ACTIVITÉ 1 – ORGANISER UN VOYAGE\n" +
+        "=================================\n\n" +
+        lireReponses("a1") +
+        "\n\n" +
+        "Expressions utiles pour la présentation :\n" +
+        "- Nous allons partir…\n" +
+        "- Nous allons prendre…\n" +
+        "- Nous allons loger…\n" +
+        "- Nous allons visiter…\n" +
+        "- Nous allons faire…\n";
+
+
+    telechargerFichier(
+        "activite_1_projet_de_voyage.txt",
+        contenu
+    );
+
+}
+
+
+function effacerActivite1() {
+
+    document
+        .querySelectorAll(".a1")
+        .forEach(function(cellule) {
+
+            cellule.innerHTML = "";
+
+        });
+
+}
+
+
+/* =====================================================
+   ACTIVITÉ 2
+===================================================== */
+
+function telechargerActivite2() {
+
+    const contenu =
+        "ACTIVITÉ 2 – MES MEILLEURES OU MES PIRES VACANCES\n" +
+        "==================================================\n\n" +
+        lireReponses("a2") +
+        "\n\n" +
+        "Connecteurs utiles :\n" +
+        "D’abord – Ensuite – Puis – Après – Finalement\n";
+
+
+    telechargerFichier(
+        "activite_2_mes_vacances.txt",
+        contenu
+    );
+
+}
+
+
+function effacerActivite2() {
+
+    document
+        .querySelectorAll(".a2")
+        .forEach(function(cellule) {
+
+            cellule.innerHTML = "";
+
+        });
+
+}
+
+
+/* =====================================================
+   TÉLÉCHARGER LES DEUX ACTIVITÉS
+===================================================== */
+
+function telechargerTout() {
+
+    const contenu =
+        "VOYAGES ET VACANCES – PRODUCTION ORALE\n" +
+        "======================================\n\n\n" +
+
+        "ACTIVITÉ 1 – ORGANISER UN VOYAGE\n" +
+        "---------------------------------\n\n" +
+
+        lireReponses("a1") +
+
+        "\n\nExpressions utiles :\n" +
+        "Nous allons partir…\n" +
+        "Nous allons prendre…\n" +
+        "Nous allons loger…\n" +
+        "Nous allons visiter…\n" +
+        "Nous allons faire…\n\n\n" +
+
+        "ACTIVITÉ 2 – MES MEILLEURES OU MES PIRES VACANCES\n" +
+        "--------------------------------------------------\n\n" +
+
+        lireReponses("a2") +
+
+        "\n\nConnecteurs :\n" +
+        "D’abord – Ensuite – Puis – Après – Finalement\n";
+
+
+    telechargerFichier(
+        "voyages_et_vacances_reponses.txt",
+        contenu
+    );
+
+}
+
+</script>
+
+</body>
+</html>
