@@ -286,6 +286,34 @@ button {
 
 }
 
+
+/* ACCÈS AUX MURS PADLET */
+.liens-padlet {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+.btn-padlet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 20px;
+    border: 1px solid #ffccd0;
+    border-radius: 12px;
+    background: #fff2f3;
+    color: #b93c44;
+    font-weight: 700;
+    text-decoration: none;
+}
+.btn-padlet:hover, .btn-padlet:focus-visible {
+    background: #ffdde0;
+    outline-offset: 3px;
+}
+@media (max-width: 600px) {
+    .liens-padlet { grid-template-columns: 1fr; }
+}
+
 </style>
 </head>
 
@@ -313,7 +341,7 @@ button {
     </p>
 
     <div class="encadre">
-        Notez vos décisions directement dans la grille.
+        Publiez vos décisions dans le mur Padlet de votre binôme.
         Il n’est pas nécessaire de rédiger toute votre présentation.
     </div>
 
@@ -321,167 +349,17 @@ button {
 
 
 <div class="carte">
-
-    <div class="sous-titre">
-        Notre projet de voyage
+    <div class="sous-titre">Notre projet de voyage</div>
+    <p>Choisissez votre binôme pour accéder à votre mur collaboratif sur Padlet. Discutez ensemble et publiez votre projet en précisant la destination, la période, le moyen de transport, l’hébergement, trois activités et le budget approximatif par personne.</p>
+    <div class="liens-padlet">
+        <a class="btn-padlet" href="https://padlet.com/kamilo1985/breakout-room/E1Xd49kaLYNlqGJr-oAdpz20pdNOOv10R" target="_blank" rel="noopener noreferrer">Binôme 1 <span aria-hidden="true">↗</span></a>
+        <a class="btn-padlet" href="https://padlet.com/kamilo1985/breakout-room/ke9KqzYJ6ZN92YQG-oAdpz20pdNOOv10R" target="_blank" rel="noopener noreferrer">Binôme 2 <span aria-hidden="true">↗</span></a>
+        <a class="btn-padlet" href="https://padlet.com/kamilo1985/breakout-room/961rqRQWpD6b2nND-oAdpz20pdNOOv10R" target="_blank" rel="noopener noreferrer">Binôme 3 <span aria-hidden="true">↗</span></a>
+        <a class="btn-padlet" href="https://padlet.com/kamilo1985/breakout-room/LProvDLZ0KmgvOMJ-oAdpz20pdNOOv10R" target="_blank" rel="noopener noreferrer">Binôme 4 <span aria-hidden="true">↗</span></a>
+        <a class="btn-padlet" href="https://padlet.com/kamilo1985/breakout-room/nRxeqrlVZW57456P-oAdpz20pdNOOv10R" target="_blank" rel="noopener noreferrer">Binôme 5 <span aria-hidden="true">↗</span></a>
+        <a class="btn-padlet" href="https://padlet.com/kamilo1985/breakout-room/Bk5x4dLzyReb4Zgz-oAdpz20pdNOOv10R" target="_blank" rel="noopener noreferrer">Binôme 6 <span aria-hidden="true">↗</span></a>
     </div>
-
-
-    <table class="grille" id="grille-activite1">
-
-        <thead>
-            <tr>
-                <th>Décision</th>
-                <th>Notre choix</th>
-            </tr>
-        </thead>
-
-        <tbody>
-
-            <tr>
-                <td>
-                    1. Destination
-                </td>
-
-                <td>
-                    <div
-                        class="cellule a1"
-                        data-label="Destination"
-                        contenteditable="true"
-                        data-placeholder="Ex. : Paris, Montréal, la Gaspésie...">
-                    </div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td>
-                    2. Période
-                </td>
-
-                <td>
-                    <div
-                        class="cellule a1"
-                        data-label="Période"
-                        contenteditable="true"
-                        data-placeholder="Ex. : du 10 au 17 juillet">
-                    </div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td>
-                    3. Moyen de transport
-                </td>
-
-                <td>
-                    <div
-                        class="cellule a1"
-                        data-label="Moyen de transport"
-                        contenteditable="true"
-                        data-placeholder="Ex. : avion, train, voiture...">
-                    </div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td>
-                    4. Hébergement
-                </td>
-
-                <td>
-                    <div
-                        class="cellule a1"
-                        data-label="Hébergement"
-                        contenteditable="true"
-                        data-placeholder="Ex. : hôtel, appartement, auberge...">
-                    </div>
-                </td>
-            </tr>
-
-
-            <tr>
-
-                <td>
-                    5. Trois activités
-                    <span class="indication">
-                        à faire sur place
-                    </span>
-                </td>
-
-                <td>
-
-                    <div class="lignes-activites">
-
-                        <div
-                            class="activite-ligne a1"
-                            data-label="Activité 1"
-                            contenteditable="true"
-                            data-placeholder="1.">
-                        </div>
-
-                        <div
-                            class="activite-ligne a1"
-                            data-label="Activité 2"
-                            contenteditable="true"
-                            data-placeholder="2.">
-                        </div>
-
-                        <div
-                            class="activite-ligne a1"
-                            data-label="Activité 3"
-                            contenteditable="true"
-                            data-placeholder="3.">
-                        </div>
-
-                    </div>
-
-                </td>
-
-            </tr>
-
-
-            <tr>
-                <td>
-                    6. Budget approximatif
-                    <span class="indication">
-                        par personne
-                    </span>
-                </td>
-
-                <td>
-                    <div
-                        class="cellule a1"
-                        data-label="Budget approximatif par personne"
-                        contenteditable="true"
-                        data-placeholder="Ex. : 1 200 $">
-                    </div>
-                </td>
-            </tr>
-
-        </tbody>
-
-    </table>
-
-
-    <div class="actions">
-
-        <button
-            class="btn-principal"
-            onclick="telechargerActivite1()">
-            Télécharger nos réponses
-        </button>
-
-        <button
-            class="btn-secondaire"
-            onclick="effacerActivite1()">
-            Effacer la grille
-        </button>
-
-    </div>
-
+    <p class="indication">Chaque binôme utilise son propre lien. Les réponses seront publiées sur Padlet.</p>
 </div>
 
 
@@ -813,229 +691,39 @@ button {
 
 
 
-<!-- =====================================================
-     TÉLÉCHARGEMENT GLOBAL
-===================================================== -->
-
-<div class="carte" style="text-align:center;">
-
-    <div class="sous-titre">
-        Partager votre travail
-    </div>
-
-    <p>
-        Vous pouvez aussi télécharger les réponses des deux activités
-        dans un seul fichier.
-    </p>
-
-    <div class="actions">
-
-        <button
-            class="btn-global"
-            onclick="telechargerTout()">
-            Télécharger les deux activités
-        </button>
-
-    </div>
-
-</div>
-
-
 </div>
 
 
 
 <script>
-
-/* =====================================================
-   RÉCUPÉRER LE TEXTE DES CELLULES
-===================================================== */
-
 function lireReponses(classe) {
-
-    const cellules =
-        document.querySelectorAll("." + classe);
-
     let texte = "";
-
-    cellules.forEach(function(cellule) {
-
-        const label =
-            cellule.dataset.label || "";
-
-        const valeur =
-            cellule.innerText.trim() || "—";
-
-        texte +=
-            label +
-            " : " +
-            valeur +
-            "\n";
-
+    document.querySelectorAll("." + classe).forEach(function(cellule) {
+        texte += (cellule.dataset.label || "") + " : " + (cellule.innerText.trim() || "—") + "\n";
     });
-
     return texte;
-
 }
-
-
-/* =====================================================
-   CRÉER UN FICHIER À TÉLÉCHARGER
-===================================================== */
-
 function telechargerFichier(nomFichier, contenu) {
-
-    const blob =
-        new Blob(
-            [contenu],
-            {
-                type:
-                    "text/plain;charset=utf-8"
-            }
-        );
-
-
-    const url =
-        URL.createObjectURL(blob);
-
-
-    const lien =
-        document.createElement("a");
-
-
-    lien.href =
-        url;
-
-    lien.download =
-        nomFichier;
-
-
+    const blob = new Blob([contenu], {type: "text/plain;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+    const lien = document.createElement("a");
+    lien.href = url;
+    lien.download = nomFichier;
     document.body.appendChild(lien);
-
     lien.click();
-
     document.body.removeChild(lien);
-
-
     URL.revokeObjectURL(url);
-
 }
-
-
-/* =====================================================
-   ACTIVITÉ 1
-===================================================== */
-
-function telechargerActivite1() {
-
-    const contenu =
-        "ACTIVITÉ 1 – ORGANISER UN VOYAGE\n" +
-        "=================================\n\n" +
-        lireReponses("a1") +
-        "\n\n" +
-        "Expressions utiles pour la présentation :\n" +
-        "- Nous allons partir…\n" +
-        "- Nous allons prendre…\n" +
-        "- Nous allons loger…\n" +
-        "- Nous allons visiter…\n" +
-        "- Nous allons faire…\n";
-
-
-    telechargerFichier(
-        "activite_1_projet_de_voyage.txt",
-        contenu
-    );
-
-}
-
-
-function effacerActivite1() {
-
-    document
-        .querySelectorAll(".a1")
-        .forEach(function(cellule) {
-
-            cellule.innerHTML = "";
-
-        });
-
-}
-
-
-/* =====================================================
-   ACTIVITÉ 2
-===================================================== */
-
 function telechargerActivite2() {
-
-    const contenu =
-        "ACTIVITÉ 2 – MES MEILLEURES OU MES PIRES VACANCES\n" +
+    const contenu = "ACTIVITÉ 2 – MES MEILLEURES OU MES PIRES VACANCES\n" +
         "==================================================\n\n" +
         lireReponses("a2") +
-        "\n\n" +
-        "Connecteurs utiles :\n" +
-        "D’abord – Ensuite – Puis – Après – Finalement\n";
-
-
-    telechargerFichier(
-        "activite_2_mes_vacances.txt",
-        contenu
-    );
-
+        "\n\nConnecteurs utiles :\nD’abord – Ensuite – Puis – Après – Finalement\n";
+    telechargerFichier("activite_2_mes_vacances.txt", contenu);
 }
-
-
 function effacerActivite2() {
-
-    document
-        .querySelectorAll(".a2")
-        .forEach(function(cellule) {
-
-            cellule.innerHTML = "";
-
-        });
-
+    document.querySelectorAll(".a2").forEach(function(cellule) { cellule.innerHTML = ""; });
 }
-
-
-/* =====================================================
-   TÉLÉCHARGER LES DEUX ACTIVITÉS
-===================================================== */
-
-function telechargerTout() {
-
-    const contenu =
-        "VOYAGES ET VACANCES – PRODUCTION ORALE\n" +
-        "======================================\n\n\n" +
-
-        "ACTIVITÉ 1 – ORGANISER UN VOYAGE\n" +
-        "---------------------------------\n\n" +
-
-        lireReponses("a1") +
-
-        "\n\nExpressions utiles :\n" +
-        "Nous allons partir…\n" +
-        "Nous allons prendre…\n" +
-        "Nous allons loger…\n" +
-        "Nous allons visiter…\n" +
-        "Nous allons faire…\n\n\n" +
-
-        "ACTIVITÉ 2 – MES MEILLEURES OU MES PIRES VACANCES\n" +
-        "--------------------------------------------------\n\n" +
-
-        lireReponses("a2") +
-
-        "\n\nConnecteurs :\n" +
-        "D’abord – Ensuite – Puis – Après – Finalement\n";
-
-
-    telechargerFichier(
-        "voyages_et_vacances_reponses.txt",
-        contenu
-    );
-
-}
-
 </script>
 
 </body>
